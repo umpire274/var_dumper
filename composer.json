@@ -15,16 +15,6 @@
             "email": "alex@umpire274.com"
         }
     ],
-    "autoload": {
-        "psr-4": {
-            "var_dumper\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "var_dumper\\Tests\\": "tests/"
-        }
-    },
     "require": {
         "php": "^7.2"
     }
