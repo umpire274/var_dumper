@@ -1,0 +1,31 @@
+{
+    "name": "umpire274/var_dumper",
+    "description": "A PHP library for printing PHP variables, arrays, objects and other complex structures in human readable format",
+    "type": "library",
+    "keywords": [
+        "PHP",
+        "var_dump",
+        "var_export",
+        "print_r"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Umpire274",
+            "email": "alex@umpire274.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "var_dumper\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "var_dumper\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.2"
+    }
+}
