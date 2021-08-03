@@ -12,9 +12,14 @@
     "authors": [
         {
             "name": "Umpire274",
-            "email": "alex@umpire274.com"
+            "email": "umpire274@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "VarDumper\\": "src/Command"
+        }
+    },
     "require": {
         "php": "^7.2"
     }

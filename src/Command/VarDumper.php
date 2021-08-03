@@ -1,5 +1,7 @@
 <?php
 
+namespace var_dumper\Command;
+
 
 class VarDumper {
 	private static function varexport( $expression, $return = false ): mixed {
