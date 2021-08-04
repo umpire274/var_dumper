@@ -4,7 +4,6 @@
 namespace Command;
 
 use Hamcrest\Util;
-use PHPMetarTafParser\Parser\MetarParser;
 use stdClass;
 use var_dumper\Command\VarDumper;
 use PHPUnit\Framework\TestCase;
@@ -34,9 +33,9 @@ class VarDumperTest extends TestCase {
 			"cd" => 'ciao broccoletto fritto',
 		];
 
-		$dbg = $this -> vdump -> udump( $myobject, true, '', true );
+		$dbg = $this -> vdump -> udump( $myobject );
 
-		print ($dbg);
+		print ( $dbg );
 
 		self ::assertNotNull( $dbg );
 	}
