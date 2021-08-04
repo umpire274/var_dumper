@@ -4,7 +4,7 @@ namespace var_dumper\Command;
 
 
 class VarDumper {
-	private static function varexport( $expression, $return = false ): mixed {
+	private static function varexport( $expression, $return = false ) {
 		$export = var_export( $expression, true );
 		$patterns = [
 			"/array \(/" => '[',
@@ -24,7 +24,7 @@ class VarDumper {
 		return false;
 	}
 
-	public static function udump( $object, $exit = true, $titolo = '', $print = false ): mixed {
+	public static function udump( $object, $exit = true, $titolo = '', $print = false ) {
 
 		if ( !empty( $titolo ) ) {
 			echo '<h1>' . $titolo . '</h1>';
