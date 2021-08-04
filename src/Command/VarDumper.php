@@ -42,7 +42,7 @@ class VarDumper {
 	 *
 	 * @return array|false|string|string[]|null
 	 */
-	public static function udump( mixed $object, bool $print = false, bool $exit = true ) {
+	public static function udump( $object, bool $print = false, bool $exit = true ) {
 
 		if ( !$print ) {
 			echo '<pre>';
