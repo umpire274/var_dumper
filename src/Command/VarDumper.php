@@ -3,7 +3,18 @@
 namespace var_dumper\Command;
 
 
+/**
+ * Class VarDumper
+ *
+ * @package var_dumper\Command
+ */
 class VarDumper {
+	/**
+	 * @param       $expression
+	 * @param false $return
+	 *
+	 * @return array|false|string|string[]|null
+	 */
 	private static function varexport( $expression, $return = false ) {
 		$export = var_export( $expression, true );
 		$patterns = [
@@ -24,19 +35,25 @@ class VarDumper {
 		return false;
 	}
 
-	public static function udump( $object, $exit = true, $titolo = '', $print = false ) {
+	/**
+	 * @param mixed $object
+	 * @param false $print
+	 * @param bool  $exit
+	 *
+	 * @return array|false|string|string[]|null
+	 */
+	public static function udump( mixed $object, bool $print = false, bool $exit = true ) {
 
-		if ( !empty( $titolo ) ) {
-			echo '<h1>' . $titolo . '</h1>';
-		}
 		if ( !$print ) {
 			echo '<pre>';
-			print_r( $object );
 		}
-		else {
-			return self ::varexport( $object, $print );
+
+		self ::varexport( $object, $print );
+
+		if ( !$print ) {
+			echo '</pre>';
 		}
-		echo '</pre>';
+
 		if ( $exit ) {
 			exit();
 		}
