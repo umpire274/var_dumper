@@ -11,11 +11,10 @@ namespace var_dumper\Command;
 class VarDumper {
 	/**
 	 * @param       $expression
-	 * @param false $return
 	 *
 	 * @return array|false|string|string[]|null
 	 */
-	private static function varexport( $expression, $return = false ) {
+	private static function varexport( $expression ) {
 		$export = var_export( $expression, true );
 		$patterns = [
 			"/array \(/" => '[',
@@ -25,14 +24,8 @@ class VarDumper {
 			"/([ ]*)(\'[^\']+\') => ([\[\'])/" => '$1$2 => $3',
 		];
 		$export = preg_replace( array_keys( $patterns ), array_values( $patterns ), $export );
-		if ( (bool) $return ) {
-			return $export;
-		}
-		else {
-			echo $export;
-		}
 
-		return false;
+		return $export;
 	}
 
 	/**
@@ -48,7 +41,7 @@ class VarDumper {
 			echo '<pre>';
 		}
 
-		self ::varexport( $object, $print );
+		self ::varexport( $object );
 
 		if ( !$print ) {
 			echo '</pre>';
